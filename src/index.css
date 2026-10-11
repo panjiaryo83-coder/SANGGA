@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&display=swap');
+@import 'tailwindcss';
+
+@theme {
+  --color-green-deep: #2E7D32;
+  --color-green-dark: #174D2A;
+  --color-orange-warm: #FF7043;
+  --color-yellow-soft: #FFCC80;
+  --color-off-white: #FAFAF8;
+  --color-green-light: #EAF4E7;
+  --color-orange-light: #FFF0EB;
+  --color-yellow-light: #FFF7E5;
+  --color-text-primary: #17211B;
+  --color-text-secondary: #66736B;
+  --color-border: #DDE4DE;
+  --color-green-mid: #4CAF50;
+  --color-green-faint: #F2FAF2;
+
+  --font-display: 'Plus Jakarta Sans', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --font-mono: 'DM Mono', monospace;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #FAFAF8;
+  color: #17211B;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 600;
+  margin: 0;
+}
+
+p { margin: 0; }
+
+/* Hide scrollbars by default */
+::-webkit-scrollbar { width: 0px; }
+::-webkit-scrollbar-track { background: transparent; }
+
+/* Smooth scrollbar on hover */
+.scrollable:hover::-webkit-scrollbar { width: 4px; }
+.scrollable:hover::-webkit-scrollbar-thumb { background: #DDE4DE; border-radius: 2px; }
+
+/* Typography helpers */
+.font-display { font-family: 'Plus Jakarta Sans', sans-serif; }
+.font-mono { font-family: 'DM Mono', monospace; }
+
+/* Transition defaults */
+button, a { transition: all 0.15s ease; }
+
+/* Status badge base */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 8px;
+  border-radius: 100px;
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.badge-ready {
+  background: #EAF4E7;
+  color: #2E7D32;
+}
+
+.badge-limited {
+  background: #FFF7E5;
+  color: #8B6914;
+}
+
+.badge-urgent {
+  background: #FFF0EB;
+  color: #D84315;
+}
+
+.badge-inactive {
+  background: #F0F0F0;
+  color: #666;
+}
+
+.badge-sim {
+  background: #FFF7E5;
+  color: #8B6914;
+  border: 1px solid #FFCC80;
+}
+
+/* Progress pipe */
+.readiness-pipe {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+/* Smooth page transitions */
+.page-enter {
+  animation: fadeSlideIn 0.2s ease;
+}
+
+@keyframes fadeSlideIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Mobile bottom nav safe area */
+.mobile-safe {
+  padding-bottom: env(safe-area-inset-bottom, 0);
+}
+
+/* Sidebar active state */
+.nav-active {
+  background: #EAF4E7;
+  color: #2E7D32;
+  font-weight: 600;
+}
+
+.nav-active svg {
+  color: #2E7D32;
+}
